@@ -19,15 +19,24 @@
                 <span id="time-display">60:00</span>
             </div>
 
-            <div id="question-container"></div>
+            <div class="quiz-layout">
+                <div class="question-panel">
+                    <div id="question-container"></div>
 
-            <div class="navigation">
-                <button id="prev-btn" class="btn btn-secondary">← Câu trước</button>
-                <span id="question-counter"></span>
-                <button id="next-btn" class="btn btn-secondary">Câu sau →</button>
+                    <div class="navigation">
+                        <button id="prev-btn" class="btn btn-secondary">← Câu trước</button>
+                        <span id="question-counter"></span>
+                        <button id="next-btn" class="btn btn-secondary">Câu sau →</button>
+                    </div>
+
+                    <button id="submit-btn" class="btn btn-primary">Nộp bài</button>
+                </div>
+
+                <div class="question-list-panel">
+                    <h3>Danh sách câu hỏi</h3>
+                    <div id="question-list"></div>
+                </div>
             </div>
-
-            <button id="submit-btn" class="btn btn-primary">Nộp bài</button>
         </div>
 
         <div id="result-container" class="hidden">

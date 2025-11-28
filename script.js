@@ -4,19 +4,50 @@ let userAnswers = [];
 let timeLeft = 3600; // 60 phút = 3600 giây
 let timerInterval;
 let quizStarted = false;
+let shuffledQuizData = [];
+
+// Hàm trộn mảng (Fisher-Yates shuffle)
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
 
 // Khởi tạo
 document.addEventListener('DOMContentLoaded', function() {
+    // Trộn câu hỏi
+    shuffledQuizData = shuffleArray(quizData).map(q => {
+        // Tạo mảng các index và trộn
+        const indices = [0, 1, 2, 3].filter(i => i < q.options.length);
+        const shuffledIndices = shuffleArray(indices);
+        
+        // Tạo options mới theo thứ tự đã trộn
+        const shuffledOptions = shuffledIndices.map(i => q.options[i]);
+        
+        // Tìm vị trí mới của đáp án đúng
+        const newCorrectIndex = shuffledIndices.indexOf(q.correct);
+        
+        return {
+            ...q,
+            options: shuffledOptions,
+            correct: newCorrectIndex
+        };
+    });
+    
     initQuiz();
     setupEventListeners();
     startTimer();
 });
 
 function initQuiz() {
-    userAnswers = new Array(quizData.length).fill(null);
+    userAnswers = new Array(shuffledQuizData.length).fill(null);
     displayQuestion();
     updateQuestionCounter();
     updateNavigationButtons();
+    renderQuestionList();
 }
 
 function setupEventListeners() {
@@ -28,7 +59,7 @@ function setupEventListeners() {
 
 function displayQuestion() {
     const questionContainer = document.getElementById('question-container');
-    const question = quizData[currentQuestion];
+    const question = shuffledQuizData[currentQuestion];
     
     let html = `
         <div class="question">
@@ -59,6 +90,37 @@ function displayQuestion() {
     `;
     
     questionContainer.innerHTML = html;
+    updateQuestionList();
+}
+
+function renderQuestionList() {
+    const listContainer = document.getElementById('question-list');
+    let html = '';
+    
+    for (let i = 0; i < shuffledQuizData.length; i++) {
+        const isAnswered = userAnswers[i] !== null;
+        const isCurrent = i === currentQuestion;
+        html += `
+            <div class="question-item ${isAnswered ? 'answered' : ''} ${isCurrent ? 'current' : ''}" 
+                 onclick="goToQuestion(${i})"
+                 title="Câu ${i + 1}${isAnswered ? ' (Đã trả lời)' : ' (Chưa trả lời)'}">
+                ${i + 1}
+            </div>
+        `;
+    }
+    
+    listContainer.innerHTML = html;
+}
+
+function updateQuestionList() {
+    renderQuestionList();
+}
+
+function goToQuestion(index) {
+    currentQuestion = index;
+    displayQuestion();
+    updateQuestionCounter();
+    updateNavigationButtons();
 }
 
 function selectAnswer(answerIndex) {
@@ -73,6 +135,9 @@ function selectAnswer(answerIndex) {
             option.classList.remove('selected');
         }
     });
+    
+    // Cập nhật danh sách câu hỏi
+    updateQuestionList();
 }
 
 function previousQuestion() {
@@ -85,7 +150,7 @@ function previousQuestion() {
 }
 
 function nextQuestion() {
-    if (currentQuestion < quizData.length - 1) {
+    if (currentQuestion < shuffledQuizData.length - 1) {
         currentQuestion++;
         displayQuestion();
         updateQuestionCounter();
@@ -96,12 +161,12 @@ function nextQuestion() {
 function updateQuestionCounter() {
     const answered = userAnswers.filter(a => a !== null).length;
     document.getElementById('question-counter').textContent = 
-        `Câu ${currentQuestion + 1}/${quizData.length} (Đã trả lời: ${answered})`;
+        `Câu ${currentQuestion + 1}/${shuffledQuizData.length} (Đã trả lời: ${answered})`;
 }
 
 function updateNavigationButtons() {
     document.getElementById('prev-btn').disabled = currentQuestion === 0;
-    document.getElementById('next-btn').disabled = currentQuestion === quizData.length - 1;
+    document.getElementById('next-btn').disabled = currentQuestion === shuffledQuizData.length - 1;
 }
 
 function startTimer() {
@@ -155,7 +220,7 @@ function calculateScore() {
     userAnswers.forEach((answer, index) => {
         if (answer === null) {
             skipped++;
-        } else if (answer === quizData[index].correct) {
+        } else if (answer === shuffledQuizData[index].correct) {
             correct++;
         } else {
             incorrect++;
@@ -167,7 +232,7 @@ function calculateScore() {
 
 function showResults() {
     const { correct, incorrect, skipped } = calculateScore();
-    const total = quizData.length;
+    const total = shuffledQuizData.length;
     const percentage = ((correct / total) * 100).toFixed(1);
     const timeTaken = 3600 - timeLeft;
     const minutesTaken = Math.floor(timeTaken / 60);
@@ -226,7 +291,7 @@ function displayAnswerReview() {
     const reviewContainer = document.getElementById('answer-review');
     let html = '<h3 style="margin-bottom: 20px; color: #667eea;">Xem lại đáp án</h3>';
     
-    quizData.forEach((question, index) => {
+    shuffledQuizData.forEach((question, index) => {
         const userAnswer = userAnswers[index];
         const correctAnswer = question.correct;
         const isCorrect = userAnswer === correctAnswer;
@@ -268,8 +333,22 @@ function displayAnswerReview() {
 }
 
 function restartQuiz() {
+    // Trộn lại câu hỏi và đáp án
+    shuffledQuizData = shuffleArray(quizData).map(q => {
+        const indices = [0, 1, 2, 3].filter(i => i < q.options.length);
+        const shuffledIndices = shuffleArray(indices);
+        const shuffledOptions = shuffledIndices.map(i => q.options[i]);
+        const newCorrectIndex = shuffledIndices.indexOf(q.correct);
+        
+        return {
+            ...q,
+            options: shuffledOptions,
+            correct: newCorrectIndex
+        };
+    });
+    
     currentQuestion = 0;
-    userAnswers = new Array(quizData.length).fill(null);
+    userAnswers = new Array(shuffledQuizData.length).fill(null);
     timeLeft = 3600;
     
     document.getElementById('result-container').classList.add('hidden');
