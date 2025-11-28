@@ -1,0 +1,144 @@
+Câu 1: You ONLY want to manage Applications and Data. Which type of Cloud Computing model should you use? (Bạn chỉ muốn quản lý App và dữ liệu. Loại model cloud nào là được nên sử dụng) 
+A. On-premises 
+B. Infrastructure as a Services (IaaS) 
+C. Software as a Services (SaaS) 
+*D. Platform as a Services
+Câu 2: What is the pricing model of Cloud Computing? (Đâu là mô hình tính phí cho Cloud computing) 
+A. Discounts over time 
+*B. Pay-as-you-go pricing 
+C. Pay once a year 
+D. Flat-rate pricing
+Câu 3: Which Global Infrastructure identity is composed of one or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure? (Mô hình Infra nào là nơi chứa một hoặc nhiều trung tâm dữ liệu với điện, mạng và kết nối để hình để deploy) 
+A. Edge Locations 
+*B. Availability Zones 
+C. Regions 
+D. Local
+Câu 4: Which of the following is NOT one of the Five Characteristics of Cloud Computing? (Cái nào là không phải là một trong 4 đặc tính của cloud computing) A. Rapid elasticity and scalability 
+B. Multi-tenancy and resource pooling 
+*C. Dedicated Support Agent to help you deploy applications 
+D. On-demand self service
+Câu 5: Which are the 3 pricing Fundamentals of the AWS Cloud? (3 nguyên tắc cơ bản về giá của Đám mây AWS là gì?) 
+A. Compute, Storage, and Data transfer in the AWS Cloud 
+B. Compute, Networking, and Data transfer out of the AWS Cloud 
+*C. Compute, Storage, and Data transfer out of the AWS Cloud 
+D. Storage, Functions, and Data transfer in the AWS Cloud
+Câu 6: Which of the following options is NOT a point of consideration when choosing an AWS Region? (Tùy chọn nào sau đây KHÔNG phải là điểm cần cân nhắc khi chọn Khu vực AWS?) 
+A. Compliance with data governance 
+B. Latency 
+C. Capacity availability (Thông thường người dùng cân nhắc về Giá, Độ trễ, Tính tuân thủ và Dịch vụ có sẵn. Capacity được hiểu là mặc định có sẵn trên Cloud) 
+*D. Pricing
+Câu 7: AWS Regions are composed of? (Khu vực AWS bao gồm?) 
+A. Two or more Edge Locations 
+B. One or more discrete data centers 
+*C. Three or more Availability Zones
+Câu 8: Which of the following services has a global scope? (Dịch vụ nào sau đây có phạm vi toàn cầu?) 
+A. EC2 
+*B. IAM 
+C. Lambda 
+D. Rekognition
+Câu 9: Which of the following is the definition of Cloud Computing? (Điều nào sau đây là định nghĩa về Điện toán đám mây?) 
+A. Rapidly develop, test and launch software applications. 
+B. Automatic and quick ability to acquire resources as you need them and release resources when you no longer need them. 
+*C. On-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user 
+D. Change resource types when needed
+Câu 10: What defines the distribution of responsibilities for security in the AWS Cloud? (Điều gì xác định sự phân bố trách nhiệm bảo mật trên Đám mây AWS?) A. AWS Pricing Fundamentals 
+*B. The Shared Responsibility Model 
+C. AWS Acceptable Use Policy 
+D. The AWS Management Console
+Câu 11: A company would like to benefit from the advantages of the Public Cloud but would like to keep sensitive assets in its own infrastructure. Which deployment model should the company use? (Một công ty muốn hưởng lợi từ những lợi thế của Đám mây công cộng nhưng muốn giữ các tài sản nhạy cảm trong cơ sở hạ tầng của riêng mình. Công ty nên sử dụng mô hình triển khai nào?) 
+A. Private Cloud 
+B. Public Cloud 
+*C. Hybrid Cloud
+Câu 12: What is NOT authorized to do on AWS according to the AWS Acceptable Use Policy ? (Những gì KHÔNG được phép thực hiện trên AWS theo Chính sách sử dụng được chấp nhận của AWS?) 
+A. Building a gaming application 
+B. Deploying a website 
+*C. Run analytics on stolen content 
+D. Backup your data
+Câu 13: What is a proper definition of IAM Roles? (Định nghĩa đúng về Vai trò IAM là gì?) 
+*A. An IAM entity that defines a set of permissions for making AWS service requests, that will be used by AWS services 
+B. IAM Users in multiple Groups C. A password policy 
+D. Permissions assigned to Users to perform actions
+Câu 14: Which answer is INCORRECT regarding IAM Users? (Câu trả lời nào KHÔNG ĐÚNG đối với Người dùng IAM?) 
+A. IAM Users can belong to multiple groups 
+B. IAM Users don't have to belong to a group 
+C. IAM Users can have policies assigned to them 
+*D. IAM Users access AWS with the root account credentials
+Câu 15: Which of the following is an IAM best practice? (Cách nào sau đây là phương pháp thực hành tốt nhất của IAM?) 
+*A. Don't use the root user account 
+B. Create several users for a physical person 
+C. Share credentials so a colleague can perform a task for you 
+D. Do not enable MFA for easier access
+Câu 16: What are IAM Policies? (Chính sách IAM là gì?) 
+A. AWS services performable actions 
+*B. JSON documents to define Users, Groups or Roles' permissions
+C. Rules to set up a password for IAM Users 
+D. Restrict root account permissions
+Câu 17: Which principle should you apply regarding IAM Permissions? (Bạn nên áp dụng nguyên tắc nào liên quan đến Quyền IAM?) 
+A. Grant most privilege 
+*B. Grant least privilege (Nguyên tắc đặc quyền tối thiểu) C. Grant permissions if your employee asks you to 
+D. Restrict root account permissions
+Câu 18: Which EC2 Purchasing Option can provide the biggest discount, but is not suitable for critical jobs or databases? (Tùy chọn mua EC2 nào có thể mang lại mức chiết khấu lớn nhất nhưng không phù hợp với các công việc hoặc cơ sở dữ liệu quan trọng?) 
+A. Reserved Instances 
+B. Convertible Instances 
+C. Dedicated Hosts 
+*D. Spot Instances (Giá rẻ nhất nhưng có thể bị thu hồi bất cứ lúc nào)
+Câu 19: Which network security tool can you use to control traffic in and out of EC2 Instances? (Bạn có thể sử dụng công cụ bảo mật mạng nào để kiểm soát lưu lượng vào và ra Phiên bản EC2?) 
+A. Network Access Control List (NACL) 
+B. Identity and Management Access (IAM) 
+C. GuardDuty 
+*D. Security Groups (Security Group hoạt động ở cấp độ Instance, còn NACL hoạt động ở cấp độ Subnet)
+Câu 20: Which of the following is NOT an EC2 Instance Purchasing Option? (Lựa chọn nào sau đây KHÔNG phải là Tùy chọn mua phiên bản EC2?) 
+A. Spot Instances 
+B. Reserved Instances 
+C. On-demand Instances 
+*D. Connect Instances (Đây không phải là một loại hình mua EC2)
+Câu 21: Which EC2 Purchasing Option should you use for an application you plan on running on a server continuously for 1 year? (Bạn nên sử dụng Tùy chọn mua EC2 nào cho ứng dụng bạn định chạy trên máy chủ liên tục trong 1 năm?) 
+*A. Reserved Instances (Dành cho các tác vụ chạy ổn định, dài hạn với cam kết 1 hoặc 3 năm) 
+B. Spot Instances 
+C. On-demand Instances 
+D. Convertible Instances
+Câu 22: Where are objects stored in Amazon S3? (Các đối tượng được lưu trữ trong Amazon S3 ở đâu?) 
+A. Folders 
+*B. Buckets 
+C. Files 
+D. Bin
+Câu 23: How do you get charged in AWS Lambda? (Bạn bị tính phí như thế nào trong AWS Lambda?) 
+A. Per programming language 
+B. Per number of functions 
+*C. Per call and per duration (Tính theo số lần gọi và thời gian chạy code) 
+D. Per inactive time
+Câu 24: How would you best describe "event-driven" in AWS Lambda? (Bạn mô tả chính xác nhất "theo sự kiện" trong AWS Lambda như thế nào?) 
+A. Happens on a certain day 
+B. Happens at a certain time 
+C. Happens on a regular basis 
+*D. Happens when needed (Code chỉ chạy khi có sự kiện kích hoạt)
+Câu 25: Which of the following statements is INCORRECT regarding the definition of the term "serverless"? (Câu nào sau đây KHÔNG ĐÚNG về định nghĩa của thuật ngữ "serverless"?) 
+A. Serverless allows you to deploy functions as a service 
+*B. There are no servers (Thực tế vẫn có máy chủ vật lý, nhưng người dùng không cần quản lý chúng. Nên nói "không có server" là sai về mặt kỹ thuật) 
+C. You don't need to manage servers 
+D. Lambda is the serverless pioneer
+Câu 26: Which of the following statements is NOT a feature of AWS Lambda? (Câu nào sau đây KHÔNG phải là tính năng của AWS Lambda?) 
+A. Integration with the whole AWS suite of services 
+B. Virtual functions 
+C. Automated and continuous scaling 
+*D. Definition of a minimum and a maximum of EC2 Instances running (Đây là tính năng của EC2 Auto Scaling Group, không phải của Lambda vì Lambda là serverless)
+Câu 27: Which AWS serverless service can be used by developers to create APIs? (Nhà phát triển có thể sử dụng dịch vụ serverless nào của AWS để tạo API?) 
+A. ECR 
+B. Lambda 
+*C. API gateway
+Câu 28: Which relational database is a proprietary technology from AWS and is cloud-optimized? (Cơ sở dữ liệu quan hệ nào là công nghệ độc quyền của AWS và được tối ưu hóa cho đám mây?) 
+A. DynamoDB (Đây là NoSQL, không phải quan hệ) 
+B. Oracle 
+C. Athena 
+*D. Aurora (Amazon Aurora)
+Câu 29: What is the main purpose of High Availability in the Cloud? (Mục đích chính của Tính sẵn sàng cao trong Đám mây là gì?) 
+A. Increase scalability 
+*B. Application thriving even in case of a disaster (Ứng dụng vẫn hoạt động tốt ngay cả khi xảy ra thảm họa/sự cố) 
+C. Access on computers and smartphones 
+D. Handle greater loads by launching EC2 instances based on the demand
+Câu 30: Which of the following statements is NOT a feature of Load Balancers? (Câu nào sau đây KHÔNG phải là tính năng của Cân bằng tải?) 
+A. Do regular health checks to your instances 
+B. Spread load across multiple downstream instances 
+C. Handle failures of downstream instances 
+*D. Back-end autoscaling (Load Balancer chỉ phân phối tải. Việc tự động mở rộng (Autoscaling) do dịch vụ Auto Scaling Group đảm nhiệm)
+
