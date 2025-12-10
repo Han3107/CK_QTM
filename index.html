@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Kiểm Tra Trắc Nghiệm - Windows Server & Networking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bài Kiểm Tra Trắc Nghiệm</h1>
+        <div class="subtitle">Windows Server & Networking</div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        
+        <form id="quizForm">
+            <!-- Questions will be dynamically generated here -->
+        </form>
+
+        <div class="result" id="result">
+            <h2 id="scoreText"></h2>
+            <div id="scoreDetail"></div>
+            <p id="percentage"></p>
+            <button class="reset-btn" onclick="resetQuiz()">Làm Lại</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
